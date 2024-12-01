@@ -1,13 +1,21 @@
-import { createRouter, createWebHistory } from "vue-router";
-const StarshipsApp = import("starships/StarshipsApp");
+import { createRouter, createWebHistory, RouteRecord } from "vue-router";
+import HomeView from "./components/HomeView.vue";
+import starshipsRoutes from "starships/StarshipsRoutes";
+
+const setPrefixToRoutes = (routes: RouteRecord[], prefix: string) =>
+  routes.map((route) => ({
+    ...route,
+    path: `/${prefix}${route.path}`,
+  }));
 
 export const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
-      name: "Starships",
-      path: "/starships",
-      component: StarshipsApp,
+      name: "Home",
+      path: "/",
+      component: HomeView,
     },
+    ...setPrefixToRoutes(starshipsRoutes, "starships"),
   ],
 });

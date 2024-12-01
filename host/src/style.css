@@ -38,7 +38,7 @@ h1 {
   line-height: 1.1;
 }
 
-button {
+button, .link {
   padding: 13px;
   font-size: 16px;
   font-family: inherit;
@@ -46,13 +46,17 @@ button {
   border: 1px solid #E0AE01;
   cursor: pointer;
   transition: border-color 0.25s;
+  color: white;
+  text-align: center;
 }
-button:hover {
+button:hover, .link:hover {
   border-color: #FFFFFF;
+  color: white;
 }
-button:focus,
-button:focus-visible {
+button:focus, .link:focus,
+button:focus-visible, .link:focus-visible {
   outline: none;
+  color: white;
 }
 button:active {
   outline: none;

@@ -3,12 +3,16 @@
 <template>
   <div class="side-menu">
     <div class="side-menu__logo">
-      <img src="../assets/logo.svg" class="logo" alt="Logo" />
+      <router-link to="/">
+        <img src="../assets/logo.svg" class="logo" alt="Logo" />
+      </router-link>
     </div>
     <div class="side-menu__nav">
-      <button class="btn">Star ships</button>
-      <button class="btn">People</button>
-      <button class="btn">Films</button>
+      <router-link to="/starships" class="link side-menu__nav-item">
+        Star ships
+      </router-link>
+      <router-link to="" class="link side-menu__nav-item"> People </router-link>
+      <router-link to="" class="link side-menu__nav-item"> Films </router-link>
     </div>
   </div>
 </template>
@@ -23,13 +27,17 @@
   flex-direction: column;
   align-items: center;
 
+  &__logo {
+    min-height: 90px;
+  }
+
   &__nav {
     display: flex;
     flex-direction: column;
     width: 100%;
     margin-top: 50px;
 
-    .btn {
+    &-item {
       margin-top: 10px;
     }
   }
