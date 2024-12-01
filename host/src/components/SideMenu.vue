@@ -1,14 +1,20 @@
-<script setup></script>
+<script setup lang="ts">
+import { RouteName } from "../router";
+</script>
 
 <template>
   <div class="side-menu">
     <div class="side-menu__logo">
-      <router-link to="/">
+      <router-link :to="{ name: RouteName.HOME }">
         <img src="../assets/logo.svg" class="logo" alt="Logo" />
       </router-link>
     </div>
     <div class="side-menu__nav">
-      <router-link to="/starships" class="link side-menu__nav-item">
+      <router-link
+        v-if="RouteName.STARSHIPS"
+        :to="{ name: RouteName.STARSHIPS }"
+        class="link side-menu__nav-item"
+      >
         Star ships
       </router-link>
       <router-link to="" class="link side-menu__nav-item"> People </router-link>

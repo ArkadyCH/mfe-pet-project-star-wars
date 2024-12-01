@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import SideMenu from "./components/SideMenu.vue";
+import { provide } from "vue";
+import { RouteName } from "./router";
+
+provide("RouteName", RouteName);
 </script>
 
 <template>
