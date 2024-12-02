@@ -11,7 +11,7 @@ export default defineConfig({
       remotes: {
         starships: "http://localhost:5173/assets/remoteEntry.js",
       },
-      shared: ["vue"],
+      shared: ["vue", "@apollo/client"],
     }),
   ],
   build: {

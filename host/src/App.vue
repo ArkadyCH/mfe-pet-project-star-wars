@@ -2,8 +2,11 @@
 import SideMenu from "./components/SideMenu.vue";
 import { provide } from "vue";
 import { RouteName } from "./router";
+import { DefaultApolloClient } from "@vue/apollo-composable";
+import apolloClient from "@/graphql/client";
 
 provide("RouteName", RouteName);
+provide(DefaultApolloClient, apolloClient);
 </script>
 
 <template>
