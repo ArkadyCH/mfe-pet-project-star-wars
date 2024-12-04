@@ -2,6 +2,11 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import federation from "@originjs/vite-plugin-federation";
 import { fileURLToPath, URL } from "node:url";
+import { processProxies, processRemotes } from "./vite-utils";
+
+const remotes = {
+  starships: "http://localhost:5173",
+};
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -10,7 +15,7 @@ export default defineConfig({
     federation({
       name: "host-app",
       remotes: {
-        starships: "http://localhost:5173/assets/remoteEntry.js",
+        ...processRemotes(remotes),
       },
       shared: [
         "vue",
@@ -24,6 +29,11 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
+    },
+  },
+  server: {
+    proxy: {
+      ...processProxies(remotes),
     },
   },
   build: {

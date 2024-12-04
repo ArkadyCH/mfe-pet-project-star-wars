@@ -29,6 +29,7 @@ export default defineConfig({
     },
   },
   build: {
+    assetsDir: "assets/starships",
     minify: false,
     target: ["chrome89", "edge89", "firefox89", "safari15"],
   },

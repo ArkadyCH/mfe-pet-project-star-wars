@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import useRouteName from "@/composables/useRouteName.js";
 import { Starship } from "@/graphql/interfaces";
-
+import StarshipDefaultImg from "@/assets/starship_default_preview.png";
 interface Props {
   starship: Starship;
 }
@@ -14,10 +14,7 @@ const props = defineProps<Props>();
   <div class="starship-card">
     <div class="starship-card__content">
       <div class="starship-card__preview">
-        <img
-          src="../../assets/starship_default_preview.png"
-          alt="Starship preview image"
-        />
+        <img :src="StarshipDefaultImg" alt="Starship preview image" />
       </div>
       <div class="starship-card__body">
         <div class="starship-card__title">{{ starship.name }}</div>
