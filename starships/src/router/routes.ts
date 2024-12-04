@@ -1,5 +1,5 @@
-import StarshipsDetails from "../components/StarshipsDetails.vue";
-import Starships from "../components/Starships.vue";
+import StarshipsDetails from "@/components/StarshipsDetails.vue";
+import Starships from "@/components/Starships.vue";
 
 export const RouteName = {
   STARSHIPS: "Starships",

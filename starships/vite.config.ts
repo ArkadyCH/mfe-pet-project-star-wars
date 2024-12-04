@@ -12,9 +12,15 @@ export default defineConfig({
       filename: "remoteEntry.js",
       // Modules to expose
       exposes: {
-        "./StarshipsRoutes": "./src/router/routes",
+        "./StarshipsRoutes": "./src/router/routes.ts",
       },
-      shared: ["vue"],
+      shared: [
+        "vue",
+        "@apollo/client",
+        "@vue/apollo-composable",
+        "graphql",
+        "graphql-tag",
+      ],
     }),
   ],
   resolve: {
