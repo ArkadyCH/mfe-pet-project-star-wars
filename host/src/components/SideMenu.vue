@@ -17,14 +17,21 @@ import { RouteName } from "../router";
       >
         Star ships
       </router-link>
-      <router-link to="" class="link side-menu__nav-item"> People </router-link>
-      <router-link to="" class="link side-menu__nav-item"> Films </router-link>
+      <router-link to="/people" class="link side-menu__nav-item">
+        People
+      </router-link>
+      <router-link to="/films" class="link side-menu__nav-item">
+        Films
+      </router-link>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
 .side-menu {
+  position: sticky;
+  top: 0;
+
   background: #0d0d0d;
   padding: 30px;
   max-width: 315px;

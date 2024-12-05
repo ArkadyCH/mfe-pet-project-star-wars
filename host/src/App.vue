@@ -22,6 +22,7 @@ provide(DefaultApolloClient, apolloClient);
 .container {
   display: flex;
   height: 100%;
+  overflow-y: scroll;
 }
 .content {
   padding: 50px;
