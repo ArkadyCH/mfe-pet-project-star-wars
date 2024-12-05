@@ -12,14 +12,18 @@ const starships = computed(() => result?.value?.allStarships?.starships ?? []);
 </script>
 
 <template>
-  Starships Page
-  <div>
-    <router-link :to="{ name: RouteName.HOME }">Go to Home</router-link>
-  </div>
-  <div>
-    <router-link :to="{ name: RouteName.STARSHIPS_DETAILS, params: { id: 1 } }">
-      Go to Starships Details
-    </router-link>
+  <div class="starships-headline">
+    Starships Page
+    <div>
+      <router-link :to="{ name: RouteName.HOME }">Go to Home</router-link>
+    </div>
+    <div>
+      <router-link
+        :to="{ name: RouteName.STARSHIPS_DETAILS, params: { id: 1 } }"
+      >
+        Go to Starships Details
+      </router-link>
+    </div>
   </div>
   <div class="starships-grid">
     <StarshipCard :starship="starship" v-for="starship in starships" />
@@ -28,11 +32,11 @@ const starships = computed(() => result?.value?.allStarships?.starships ?? []);
 
 <style scoped>
 .starships-grid {
-  display: flex;
-  flex-wrap: wrap;
-  .starship-card {
-    margin: 20px;
-    flex: 0 1 44%;
-  }
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  grid-gap: 25px;
+}
+.starships-headline {
+  margin-bottom: 40px;
 }
 </style>

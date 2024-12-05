@@ -47,7 +47,7 @@ const props = defineProps<Props>();
   padding: 25px 15px;
   &__content {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
   }
   &__preview {
     flex: 0 1 45%;
@@ -59,13 +59,18 @@ const props = defineProps<Props>();
   }
   &__body {
     flex: 0 1 50%;
-    margin-left: 25px;
+    margin-top: 16px;
   }
   &__title {
     color: #c9c9c9;
     font-size: 18px;
     text-align: left;
     margin-bottom: 10px;
+  }
+  &__btn {
+    display: block;
+    width: 100%;
+    margin-top: 16px;
   }
 }
 .label {

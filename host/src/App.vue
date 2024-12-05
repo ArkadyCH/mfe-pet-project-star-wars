@@ -25,5 +25,6 @@ provide(DefaultApolloClient, apolloClient);
 }
 .content {
   padding: 50px;
+  width: 100%;
 }
 </style>
