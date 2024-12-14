@@ -20,6 +20,7 @@ export default defineConfig({
         "@vue/apollo-composable",
         "graphql",
         "graphql-tag",
+        "@skeleton-elements/vue",
       ],
     }),
   ],

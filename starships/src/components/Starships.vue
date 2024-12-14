@@ -26,7 +26,12 @@ const starships = computed(() => result?.value?.allStarships?.starships ?? []);
     </div>
   </div>
   <div class="starships-grid">
-    <StarshipCard :starship="starship" v-for="starship in starships" />
+    <template v-if="loading">
+      <StarshipCard loading v-for="i in 9" :key="i" />
+    </template>
+    <template v-else>
+      <StarshipCard :starship="starship" v-for="starship in starships" />
+    </template>
   </div>
 </template>
 
