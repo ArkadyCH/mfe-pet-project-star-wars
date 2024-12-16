@@ -13,7 +13,13 @@ provide(DefaultApolloClient, apolloClient);
   <div class="container">
     <SideMenu />
     <div class="content">
-      <router-view></router-view>
+      <router-view v-slot="{ Component, pilots, films }">
+        <component :is="Component">
+          <template v-slot="{ films }">
+            <div>{{ films }}</div>
+          </template>
+        </component>
+      </router-view>
     </div>
   </div>
 </template>

@@ -4,6 +4,7 @@ import useRouteName from "@/composables/useRouteName";
 import { STARSHIPS_QUERY } from "@/graphql/queries";
 import StarshipCard from "@/components/fragments/StarshipCard.vue";
 import { computed } from "vue";
+import { StarshipsMockData } from "@/graphql/mock";
 
 const { RouteName } = useRouteName();
 
@@ -29,8 +30,19 @@ const starships = computed(() => result?.value?.allStarships?.starships ?? []);
     <template v-if="loading">
       <StarshipCard loading v-for="i in 9" :key="i" />
     </template>
+    <template v-else-if="starships.length">
+      <StarshipCard
+        :starship="starship"
+        v-for="starship in starships"
+        :key="starship.id"
+      />
+    </template>
     <template v-else>
-      <StarshipCard :starship="starship" v-for="starship in starships" />
+      <StarshipCard
+        :starship="starship"
+        v-for="starship in StarshipsMockData"
+        :key="starship.id"
+      />
     </template>
   </div>
 </template>

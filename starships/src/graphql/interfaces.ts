@@ -7,7 +7,6 @@ export type Starship = {
   hyperdriveRating: number;
   id: number;
   length: number;
-  manufacturers: string[];
   maxAtmospheringSpeed: number;
   model: string;
   name: string;

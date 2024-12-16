@@ -16,6 +16,7 @@ export default defineConfig({
       },
       shared: [
         "vue",
+        "vue-router",
         "@apollo/client",
         "@vue/apollo-composable",
         "graphql",
