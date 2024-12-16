@@ -3,10 +3,14 @@ import HomeView from "./components/HomeView.vue";
 import starshipsRoutes, {
   RouteName as StarshipsRouteName,
 } from "starships/StarshipsRoutes";
+import peopleRoutes, {
+  RouteName as PeopleRouteName,
+} from "people/PeopleRoutes";
 
 export const RouteName = {
   HOME: "HomePage",
   ...StarshipsRouteName,
+  ...PeopleRouteName,
 };
 
 const setPrefixToRoutes = (routes: RouteRecord[], prefix: string) =>
@@ -24,5 +28,6 @@ export const router = createRouter({
       component: HomeView,
     },
     ...setPrefixToRoutes(starshipsRoutes, "starships"),
+    ...setPrefixToRoutes(peopleRoutes, "people"),
   ],
 });

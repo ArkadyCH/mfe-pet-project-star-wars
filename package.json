@@ -4,12 +4,13 @@
   "workspaces": [
     "host",
     "starships",
+    "people",
     "packages/*"
   ],
   "scripts": {
-    "build": "concurrently --kill-others \"npm run build -w starships\" \"npm run build -w host\"",
-    "dev:remotes": "concurrently --kill-others \"npm run dev -w starships\"",
-    "serve": "concurrently --kill-others \"npm run preview -w starships\" \"npm run dev -w host\""
+    "build": "concurrently --kill-others \"npm run build -w starships\" \"npm run build -w people\" \"npm run build -w host\"",
+    "dev:remotes": "concurrently --kill-others \"npm run dev -w starships\" \"npm run dev -w people\"",
+    "serve": "concurrently --kill-others \"npm run preview -w starships\" \"npm run preview -w people\" \"npm run dev -w host\""
   },
   "author": "",
   "license": "ISC",
