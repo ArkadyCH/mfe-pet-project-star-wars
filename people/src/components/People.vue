@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { PeopleMockData } from '@/graphql/mock'
+import { PeopleMockData } from "@/graphql/mock";
 import useRouteName from "@/composables/useRouteName";
 import CharacterCard from "@/components/fragments/CharacterCard.vue";
-import {useQuery} from "@vue/apollo-composable";
-import {PEOPLE_QUERY} from "@/graphql/queries";
-import {computed} from "vue";
+import { useQuery } from "@vue/apollo-composable";
+import { PEOPLE_QUERY } from "@/graphql/queries";
+import { computed } from "vue";
 
 const { RouteName } = useRouteName();
 
-const {result, loading, error} = useQuery(PEOPLE_QUERY);
-console.log(result)
-// const people = computed(() => result?.value?.allStarships?.starships ?? []);
+const { result, loading, error } = useQuery(PEOPLE_QUERY);
+console.log(result);
+// const people = computed(() => result?.value?.allPilots?.pilots ?? []);
 </script>
 
 <template>

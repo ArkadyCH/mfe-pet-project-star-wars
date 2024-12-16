@@ -13,6 +13,7 @@ export default defineConfig({
       // Modules to expose
       exposes: {
         "./PeopleRoutes": "./src/router/routes.ts",
+        "./Pilots": "./src/components/Pilots.vue",
       },
       shared: [
         "vue",

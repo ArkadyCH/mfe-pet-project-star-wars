@@ -4,6 +4,7 @@ import { provide } from "vue";
 import { RouteName } from "./router";
 import { DefaultApolloClient } from "@vue/apollo-composable";
 import apolloClient from "@/graphql/client";
+import Pilots from "people/Pilots";
 
 provide("RouteName", RouteName);
 provide(DefaultApolloClient, apolloClient);
@@ -15,8 +16,8 @@ provide(DefaultApolloClient, apolloClient);
     <div class="content">
       <router-view v-slot="{ Component, pilots, films }">
         <component :is="Component">
-          <template v-slot="{ films }">
-            <div>{{ films }}</div>
+          <template v-slot="{ pilots }">
+            <Pilots :pilots-ids="pilots" />
           </template>
         </component>
       </router-view>

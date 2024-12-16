@@ -5,6 +5,7 @@ import StarshipDefaultImg from "@/assets/starship_default_preview.png";
 
 const { id } = useRoute().params;
 const starship = StarshipsMockData.find((s) => s.id === id);
+const pilots = starship?.pilots?.results.map((it) => it.id);
 </script>
 
 <template>
@@ -17,7 +18,7 @@ const starship = StarshipsMockData.find((s) => s.id === id);
         class="starship-detail__img"
       />
     </div>
-    <slot :films="starship.films" :pilots="starship.pilots"></slot>
+    <slot :films="starship.films" :pilots="pilots"></slot>
   </div>
 </template>
 
@@ -26,6 +27,7 @@ const starship = StarshipsMockData.find((s) => s.id === id);
   width: 100%;
   &__preview {
     width: 100%;
+    max-width: 800px;
   }
   &__img {
     width: 100%;

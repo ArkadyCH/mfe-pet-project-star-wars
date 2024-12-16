@@ -1,5 +1,6 @@
 import StarshipsDetails from "@/components/StarshipsDetails.vue";
 import Starships from "@/components/Starships.vue";
+import { RouteRecord } from "vue-router";
 
 export const RouteName = {
   STARSHIPS: "Starships",

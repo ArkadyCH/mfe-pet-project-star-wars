@@ -16,13 +16,8 @@ const starships = computed(() => result?.value?.allStarships?.starships ?? []);
   <div class="starships-headline">
     Starships Page
     <div>
-      <router-link :to="{ name: RouteName.HOME }">Go to Home</router-link>
-    </div>
-    <div>
-      <router-link
-        :to="{ name: RouteName.STARSHIPS_DETAILS, params: { id: 1 } }"
-      >
-        Go to Starships Details
+      <router-link :to="{ name: RouteName.HOME }">
+        [Test navigation] Go to Home
       </router-link>
     </div>
   </div>
