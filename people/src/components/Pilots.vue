@@ -5,7 +5,7 @@ interface Props {
   pilotsIds: string[];
 }
 
-const { pilotsIds } = defineProps<Props>();
+const { pilotsIds = [] } = defineProps<Props>();
 
 const pilots = PeopleMockData.filter((it) => pilotsIds.includes(it.id));
 </script>
