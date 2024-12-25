@@ -29,7 +29,17 @@ export const StarshipsMockData = [
     name: "Y-wing",
     passengers: 0,
     pilots: {
-      results: [],
+      results: [
+        {
+          id: "nxpAPnATEb",
+        },
+        {
+          id: "2INvsFHinF",
+        },
+        {
+          id: "u1kwpbPJPA",
+        },
+      ],
     },
     starshipClass: "assault starfighter",
     updatedAt: "2019-12-13T19:42:37.828Z",
@@ -106,7 +116,17 @@ export const StarshipsMockData = [
     name: "CR90 corvette",
     passengers: 600,
     pilots: {
-      results: [],
+      results: [
+        {
+          id: "nxpAPnATEb",
+        },
+        {
+          id: "2INvsFHinF",
+        },
+        {
+          id: "u1kwpbPJPA",
+        },
+      ],
     },
     starshipClass: "corvette",
     updatedAt: "2019-12-13T19:42:37.828Z",
@@ -186,7 +206,17 @@ export const StarshipsMockData = [
     name: "Star Destroyer",
     passengers: null,
     pilots: {
-      results: [],
+      results: [
+        {
+          id: "nxpAPnATEb",
+        },
+        {
+          id: "2INvsFHinF",
+        },
+        {
+          id: "u1kwpbPJPA",
+        },
+      ],
     },
     starshipClass: "Star Destroyer",
     updatedAt: "2019-12-13T19:42:37.828Z",
@@ -251,7 +281,17 @@ export const StarshipsMockData = [
     name: "EF76 Nebulon-B escort frigate",
     passengers: 75,
     pilots: {
-      results: [],
+      results: [
+        {
+          id: "nxpAPnATEb",
+        },
+        {
+          id: "2INvsFHinF",
+        },
+        {
+          id: "u1kwpbPJPA",
+        },
+      ],
     },
     starshipClass: "Escort ship",
     updatedAt: "2019-12-13T19:42:37.828Z",

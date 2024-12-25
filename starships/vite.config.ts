@@ -13,6 +13,7 @@ export default defineConfig({
       // Modules to expose
       exposes: {
         "./StarshipsRoutes": "./src/router/routes.ts",
+        "./StarshipsList": "./src/components/StarshipsList.vue",
       },
       shared: [
         "vue",
