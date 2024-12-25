@@ -66,7 +66,7 @@ const starships = character?.starships?.results.map((it) => it.id);
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  max-width: 800px;
+  max-width: 1240px;
   width: 100%;
 
   &__container {
@@ -87,6 +87,7 @@ const starships = character?.starships?.results.map((it) => it.id);
   }
 
   &__content {
+    max-width: 30%;
     width: 100%;
     margin-left: 40px;
   }

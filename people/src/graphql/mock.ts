@@ -30,13 +30,13 @@ export const PeopleMockData = [
     starships: {
       results: [
         {
-          id: "PcHTkdaQZM",
+          id: "F5l2KSa4Xk",
         },
         {
-          id: "hoJsNB1dYq",
+          id: "Or6puNLEn5",
         },
         {
-          id: "isut9lrQGD",
+          id: "ERk3O2ELin",
         },
       ],
     },
@@ -71,7 +71,17 @@ export const PeopleMockData = [
     name: "Leia Organa",
     skinColor: "light",
     starships: {
-      results: [],
+      results: [
+        {
+          id: "F5l2KSa4Xk",
+        },
+        {
+          id: "Or6puNLEn5",
+        },
+        {
+          id: "ERk3O2ELin",
+        },
+      ],
     },
   },
   {
@@ -98,7 +108,17 @@ export const PeopleMockData = [
     name: "Wicket Systri Warrick",
     skinColor: "brown",
     starships: {
-      results: [],
+      results: [
+        {
+          id: "F5l2KSa4Xk",
+        },
+        {
+          id: "Or6puNLEn5",
+        },
+        {
+          id: "ERk3O2ELin",
+        },
+      ],
     },
   },
   {
@@ -131,7 +151,17 @@ export const PeopleMockData = [
     name: "C-3PO",
     skinColor: "gold",
     starships: {
-      results: [],
+      results: [
+        {
+          id: "F5l2KSa4Xk",
+        },
+        {
+          id: "Or6puNLEn5",
+        },
+        {
+          id: "ERk3O2ELin",
+        },
+      ],
     },
   },
   {
@@ -164,7 +194,17 @@ export const PeopleMockData = [
     name: "R2-D2",
     skinColor: "white, blue",
     starships: {
-      results: [],
+      results: [
+        {
+          id: "F5l2KSa4Xk",
+        },
+        {
+          id: "Or6puNLEn5",
+        },
+        {
+          id: "ERk3O2ELin",
+        },
+      ],
     },
   },
   {
@@ -197,7 +237,17 @@ export const PeopleMockData = [
     name: "Beru Whitesun lars",
     skinColor: "light",
     starships: {
-      results: [],
+      results: [
+        {
+          id: "F5l2KSa4Xk",
+        },
+        {
+          id: "Or6puNLEn5",
+        },
+        {
+          id: "ERk3O2ELin",
+        },
+      ],
     },
   },
   {
@@ -232,13 +282,13 @@ export const PeopleMockData = [
     starships: {
       results: [
         {
-          id: "bHPFB3mOuL",
+          id: "F5l2KSa4Xk",
         },
         {
-          id: "isut9lrQGD",
+          id: "Or6puNLEn5",
         },
         {
-          id: "nYhnGcgBDc",
+          id: "ERk3O2ELin",
         },
       ],
     },
@@ -273,7 +323,17 @@ export const PeopleMockData = [
     name: "Owen Lars",
     skinColor: "light",
     starships: {
-      results: [],
+      results: [
+        {
+          id: "F5l2KSa4Xk",
+        },
+        {
+          id: "Or6puNLEn5",
+        },
+        {
+          id: "ERk3O2ELin",
+        },
+      ],
     },
   },
   {
@@ -300,7 +360,17 @@ export const PeopleMockData = [
     name: "Bib Fortuna",
     skinColor: "pale",
     starships: {
-      results: [],
+      results: [
+        {
+          id: "F5l2KSa4Xk",
+        },
+        {
+          id: "Or6puNLEn5",
+        },
+        {
+          id: "ERk3O2ELin",
+        },
+      ],
     },
   },
   {
@@ -329,7 +399,13 @@ export const PeopleMockData = [
     starships: {
       results: [
         {
-          id: "ZwoZE4IXAr",
+          id: "F5l2KSa4Xk",
+        },
+        {
+          id: "Or6puNLEn5",
+        },
+        {
+          id: "ERk3O2ELin",
         },
       ],
     },
@@ -360,7 +436,13 @@ export const PeopleMockData = [
     starships: {
       results: [
         {
-          id: "udnaqe2L4V",
+          id: "F5l2KSa4Xk",
+        },
+        {
+          id: "Or6puNLEn5",
+        },
+        {
+          id: "ERk3O2ELin",
         },
       ],
     },
@@ -389,7 +471,17 @@ export const PeopleMockData = [
     name: "Taun We",
     skinColor: "grey",
     starships: {
-      results: [],
+      results: [
+        {
+          id: "F5l2KSa4Xk",
+        },
+        {
+          id: "Or6puNLEn5",
+        },
+        {
+          id: "ERk3O2ELin",
+        },
+      ],
     },
   },
   {
@@ -424,7 +516,13 @@ export const PeopleMockData = [
     starships: {
       results: [
         {
-          id: "Dp5YCEIXR3",
+          id: "F5l2KSa4Xk",
+        },
+        {
+          id: "Or6puNLEn5",
+        },
+        {
+          id: "ERk3O2ELin",
         },
       ],
     },
@@ -456,7 +554,17 @@ export const PeopleMockData = [
     name: "Mas Amedda",
     skinColor: "blue",
     starships: {
-      results: [],
+      results: [
+        {
+          id: "F5l2KSa4Xk",
+        },
+        {
+          id: "Or6puNLEn5",
+        },
+        {
+          id: "ERk3O2ELin",
+        },
+      ],
     },
   },
   {
@@ -483,7 +591,17 @@ export const PeopleMockData = [
     name: "Lobot",
     skinColor: "light",
     starships: {
-      results: [],
+      results: [
+        {
+          id: "F5l2KSa4Xk",
+        },
+        {
+          id: "Or6puNLEn5",
+        },
+        {
+          id: "ERk3O2ELin",
+        },
+      ],
     },
   },
   {
@@ -510,7 +628,17 @@ export const PeopleMockData = [
     name: "Wat Tambor",
     skinColor: "green, grey",
     starships: {
-      results: [],
+      results: [
+        {
+          id: "F5l2KSa4Xk",
+        },
+        {
+          id: "Or6puNLEn5",
+        },
+        {
+          id: "ERk3O2ELin",
+        },
+      ],
     },
   },
   {
@@ -540,7 +668,17 @@ export const PeopleMockData = [
     name: "Sly Moore",
     skinColor: "pale",
     starships: {
-      results: [],
+      results: [
+        {
+          id: "F5l2KSa4Xk",
+        },
+        {
+          id: "Or6puNLEn5",
+        },
+        {
+          id: "ERk3O2ELin",
+        },
+      ],
     },
   },
   {
@@ -568,6 +706,12 @@ export const PeopleMockData = [
     skinColor: "light",
     starships: {
       results: [
+        {
+          id: "F5l2KSa4Xk",
+        },
+        {
+          id: "Or6puNLEn5",
+        },
         {
           id: "ERk3O2ELin",
         },
