@@ -7,7 +7,7 @@ import {
 // HTTP connection to the API
 const httpLink = createHttpLink({
   // You should use an absolute URL here
-  uri: "https://swapi-graphql.netlify.app/.netlify/functions/index",
+  uri: "https://swapi-graphql.netlify.app/graphql",
 });
 
 // Cache implementation
