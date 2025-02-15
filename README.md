@@ -1,11 +1,29 @@
-### Build everything
+# Star Wars Micro Frontend Application
 
-<code>npm run build</code>
+## 📌 About
+This is my first pet project to explore Micro Frontend architecture. It serves as an educational experiment and is not intended for production use.
 
-### Serve everything
+## 🚀 Technologies Used
+- Vue.js
+- Vite
+- vite-plugin-federation
+- GraphQL
+- skeleton-elements/vue
 
-<code>npm run serve</code>
+## 🛠 Installation & Usage
+```sh
+# Build everything
+npm run build
 
-### Resources
+# Serve everything
+npm run serve
+```
 
-[Figma link](https://www.figma.com/design/2KmtHPbCfab36lyzZ0DXH0/MFE---pet-project-Star-Wars?node-id=0-1&node-type=canvas&t=ymK7j0EGBjvRD6bf-0)
+## 🏗 MFE Architecture Implementation
+| Feature           | Description |
+|------------------|-------------|
+| **Routing**      | Each micro frontend application defines its own route configuration. The host application retrieves these route configurations, merges them into a single unified configuration, and provides access through `inject`. |
+| **Data Fetching** | Each micro frontend configures its own GraphQL queries. The Apollo client is provided as a single instance for all micro frontend applications via `inject`. |
+
+## ⚠️ Disclaimer
+This project is created solely for educational purposes. The code is provided "as is" without any guarantees or warranties. Use it at your own risk. The author is not responsible for any potential issues, bugs, or damages caused by the use of this project.
