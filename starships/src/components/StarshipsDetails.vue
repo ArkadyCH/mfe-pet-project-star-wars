@@ -1,16 +1,33 @@
 <script setup lang="ts">
-import { StarshipsMockData } from "@/graphql/mock";
 import { useRoute } from "vue-router";
 import StarshipDefaultImg from "@/assets/starship_default_preview.png";
+import { useQuery } from "@vue/apollo-composable";
+import { STARSHIP_DETAIL_QUERY } from "@/graphql/queries";
+import { StarshipQueryResult, Starship } from "@/graphql/interfaces";
+import { computed } from "vue";
 
 const { id } = useRoute().params;
-const starship = StarshipsMockData.find((s) => s.id === id);
-const films = starship?.films?.results.map((it) => it.id);
-const pilots = starship?.pilots?.results.map((it) => it.id);
+
+const { result, loading, error } = useQuery<StarshipQueryResult>(
+  STARSHIP_DETAIL_QUERY,
+  {
+    id,
+  },
+);
+const starship = computed<Starship | null>(
+  () => result.value?.starship || null,
+);
+const films = computed(
+  () => starship.value?.filmConnection?.films.map((it) => it.id) || [],
+);
+const pilots = computed(
+  () => starship.value?.pilotConnection?.pilots.map((it) => it.id) || [],
+);
 </script>
 
 <template>
-  <div class="starship-detail">
+  <div v-if="loading">Loading</div>
+  <div class="starship-detail" v-else-if="starship">
     <div class="starship-headline">{{ starship.name }}</div>
     <div class="starship-detail__container">
       <div class="starship-detail__preview">
@@ -58,6 +75,19 @@ const pilots = starship?.pilots?.results.map((it) => it.id);
       </div>
     </div>
     <slot :films="films" :pilots="pilots"></slot>
+  </div>
+  <div v-else>
+    <h3>🛸 Ship not found 🛸</h3>
+    <p>
+      🔍 Request sent to Galactic Empire and Republic Archives databases... 🔍
+    </p>
+    <b>Error 404: No ship detected.</b>
+    <p>
+      🚀 Perhaps the hyperspace route went astray and the ship was lost in time.
+      💫 Or its records were erased by the Jedi... or the Sith. <br />What to do
+      next. Try looking for another starship. Contact the nearest Rebel outpost
+      or Empire base for more information.
+    </p>
   </div>
 </template>
 

@@ -1,14 +1,23 @@
 <script setup lang="ts">
-import { StarshipsMockData } from "@/graphql/mock";
 import StarshipCard from "@/components/fragments/StarshipCard.vue";
+import { useQuery } from "@vue/apollo-composable";
+import { Starship, StarshipQueryResult } from "@/graphql/interfaces";
+import { STARSHIP_LIST_ITEM_QUERY } from "@/graphql/queries";
+import { computed } from "vue";
 interface Props {
   starshipsIds: string[];
 }
 
 const { starshipsIds = [] } = defineProps<Props>();
-
-const starships = StarshipsMockData.filter((it) =>
-  starshipsIds.includes(it.id),
+const responses = starshipsIds.map((id) =>
+  useQuery<StarshipQueryResult>(STARSHIP_LIST_ITEM_QUERY, {
+    id,
+  }),
+);
+const starships = computed<Starship[]>(() =>
+  responses
+    .map((res) => res.result.value?.starship)
+    .filter((s): s is Starship => !!s),
 );
 </script>
 <template>

@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import useRouteName from "@/composables/useRouteName.js";
-import { Starship } from "@/graphql/interfaces";
+import { StarshipListItem } from "@/graphql/interfaces";
 import StarshipDefaultImg from "@/assets/starship_default_preview.png";
 import { SkeletonBlock } from "@skeleton-elements/vue";
 
 interface Props {
-  starship?: Starship;
+  starship?: StarshipListItem;
   loading?: boolean;
 }
 
@@ -61,7 +61,7 @@ const props = defineProps<Props>();
       effect="blink"
     />
   </div>
-  <div class="starship-card" v-else>
+  <div class="starship-card" v-else-if="starship">
     <div class="starship-card__content">
       <div class="starship-card__preview">
         <img

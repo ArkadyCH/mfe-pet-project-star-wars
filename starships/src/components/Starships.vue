@@ -4,12 +4,13 @@ import useRouteName from "@/composables/useRouteName";
 import { STARSHIPS_QUERY } from "@/graphql/queries";
 import StarshipCard from "@/components/fragments/StarshipCard.vue";
 import { computed } from "vue";
-import { StarshipsMockData } from "@/graphql/mock";
+import { StarshipsQueryResult } from "@/graphql/interfaces";
 
 const { RouteName } = useRouteName();
 
-const { result, loading, error } = useQuery(STARSHIPS_QUERY);
-const starships = computed(() => result?.value?.allStarships?.starships ?? []);
+const { result, loading, error } =
+  useQuery<StarshipsQueryResult>(STARSHIPS_QUERY);
+const starships = computed(() => result.value?.allStarships?.starships ?? []);
 </script>
 
 <template>
@@ -21,24 +22,19 @@ const starships = computed(() => result?.value?.allStarships?.starships ?? []);
       </router-link>
     </div>
   </div>
-  <div class="starships-grid">
-    <template v-if="loading">
-      <StarshipCard loading v-for="i in 9" :key="i" />
-    </template>
-    <template v-else-if="starships.length">
-      <StarshipCard
-        :starship="starship"
-        v-for="starship in starships"
-        :key="starship.id"
-      />
-    </template>
-    <template v-else>
-      <StarshipCard
-        :starship="starship"
-        v-for="starship in StarshipsMockData"
-        :key="starship.id"
-      />
-    </template>
+  <div class="starships-grid" v-if="loading">
+    <StarshipCard loading v-for="i in 9" :key="i" />
+  </div>
+  <div class="starships-grid" v-else-if="starships.length">
+    <StarshipCard
+      :starship="starship"
+      v-for="starship in starships"
+      :key="starship.id"
+    />
+  </div>
+  <div class="empty-state" v-else>
+    The galaxy is empty. Not a single ship has been found. Perhaps the Empire
+    had a hand in this....
   </div>
 </template>
 
