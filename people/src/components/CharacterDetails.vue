@@ -1,16 +1,25 @@
 <script setup lang="ts">
 import PeopleDefaultImg from "@/assets/pilot_default_preview.png";
 import { useRoute } from "vue-router";
-import { PeopleMockData } from "@/graphql/mock";
+import { useQuery } from "@vue/apollo-composable";
+import { PEOPLE_DETAIL_QUERY } from "@/graphql/queries";
+import { Character, PeopleDetailQueryResult } from "@/graphql/interfaces";
+import { computed } from "vue";
 const { id } = useRoute().params;
 
-const character = PeopleMockData.find((it) => it.id === id);
-const films = character?.films?.results.map((it) => it.id);
-const starships = character?.starships?.results.map((it) => it.id);
+const { result, loading } = useQuery<PeopleDetailQueryResult>(PEOPLE_DETAIL_QUERY, {
+  id,
+});
+
+const character = computed<Character | null>(() => result.value?.person ?? null);
+const films = computed(() => character.value?.filmConnection?.films.map((it) => it.id) || []);
+const starships = computed(() => character.value?.starshipConnection?.starships.map((it) => it.id) || []);
+
 </script>
 
 <template>
-  <div class="character-detail">
+  <div v-if="loading">Loading</div>
+  <div class="character-detail" v-else-if="character">
     <div class="character-headline">{{ character.name }}</div>
     <div class="character-detail__container">
       <div class="character-detail__preview">
@@ -32,7 +41,7 @@ const starships = character?.starships?.results.map((it) => it.id);
         <div class="label">
           <div class="label__text">Home world</div>
           <div class="label__value">
-            {{ character.homeworld.name || "N/A" }}
+            {{ character.homeworld?.name || "N/A" }}
           </div>
         </div>
         <div class="label">

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Character } from "@/graphql/interfaces";
+import { PeopleListItem } from "@/graphql/interfaces";
 import PeopleDefaultImg from "@/assets/pilot_default_preview.png";
 import { SkeletonBlock } from "@skeleton-elements/vue";
 import { useRouter } from "vue-router";
@@ -9,7 +9,7 @@ const { RouteName } = useRouteName();
 const { push } = useRouter();
 
 interface Props {
-  character?: Character;
+  character?: PeopleListItem;
   loading?: boolean;
 }
 
@@ -65,7 +65,7 @@ const props = defineProps<Props>();
   </div>
   <div
     class="character-card"
-    v-else
+    v-else-if="character"
     @click="
       push({
         name: RouteName.CHARACTER_DETAILS,
@@ -94,7 +94,7 @@ const props = defineProps<Props>();
         <div class="label">
           <div class="label__text">Home world</div>
           <div class="label__value">
-            {{ character.homeworld.name || "N/A" }}
+            {{ character.homeworld?.name || "N/A" }}
           </div>
         </div>
       </div>

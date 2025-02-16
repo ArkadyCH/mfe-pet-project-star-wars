@@ -1,16 +1,14 @@
 <script setup lang="ts">
-import { PeopleMockData } from "@/graphql/mock";
 import useRouteName from "@/composables/useRouteName";
 import CharacterCard from "@/components/fragments/CharacterCard.vue";
 import { useQuery } from "@vue/apollo-composable";
 import { PEOPLE_QUERY } from "@/graphql/queries";
 import { computed } from "vue";
-
+import { PeopleQueryResult, PeopleListItem } from "@/graphql/interfaces";
 const { RouteName } = useRouteName();
 
-const { result, loading, error } = useQuery(PEOPLE_QUERY);
-console.log(result);
-// const people = computed(() => result?.value?.allPilots?.pilots ?? []);
+const { result, loading } = useQuery<PeopleQueryResult>(PEOPLE_QUERY);
+const people = computed<PeopleListItem[]>(() => result.value?.allPeople?.people ?? []);
 </script>
 
 <template>
@@ -20,8 +18,14 @@ console.log(result);
       <router-link :to="{ name: RouteName.HOME }">Go to Home</router-link>
     </div>
   </div>
-  <div class="people-grid">
-    <CharacterCard :character="character" v-for="character in PeopleMockData" />
+  <div class="people-grid" v-if="loading">
+    <CharacterCard loading v-for="i in 10" :key="i" />
+  </div>
+  <div class="people-grid" v-else-if="people.length">
+    <CharacterCard :character="character" v-for="character in people" />
+  </div>
+  <div class="empty-state" v-else>
+    The character is not in the database. The Empire may have erased him from history.... 👀
   </div>
 </template>
 

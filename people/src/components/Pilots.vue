@@ -1,13 +1,25 @@
 <script setup lang="ts">
-import { PeopleMockData } from "@/graphql/mock";
 import CharacterCard from "@/components/fragments/CharacterCard.vue";
+import { useQuery } from "@vue/apollo-composable";
+import { PILOTS_QUERY } from "@/graphql/queries";
+import { PilotsQueryResult, PeopleListItem } from "@/graphql/interfaces";
+import { computed } from "vue";
 interface Props {
   pilotsIds: string[];
 }
 
 const { pilotsIds = [] } = defineProps<Props>();
+const responses = pilotsIds.map((id) =>
+  useQuery<PilotsQueryResult>(PILOTS_QUERY, {
+    id,
+  }),
+);
+const pilots = computed<PeopleListItem[]>(() =>
+  responses
+    .map((res) => res.result.value?.person)
+    .filter((p): p is PeopleListItem => !!p),
+);
 
-const pilots = PeopleMockData.filter((it) => pilotsIds.includes(it.id));
 </script>
 <template>
   <div class="pilots" v-if="pilots.length">
