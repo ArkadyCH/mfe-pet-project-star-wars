@@ -3,6 +3,8 @@
 ## 📌 About
 This is my first pet project to explore Micro Frontend architecture. It serves as an educational experiment and is not intended for production use.
 
+![image](https://github.com/user-attachments/assets/2f79aff4-c598-454f-8fa8-d0bbc37a4a8a)
+
 ## 🚀 Technologies Used
 - Vue.js
 - Vite
