@@ -12,6 +12,9 @@ This is my first pet project to explore Micro Frontend architecture. It serves a
 
 ## 🛠 Installation & Usage
 ```sh
+# Install dependencies
+npm install
+
 # Build everything
 npm run build
 
